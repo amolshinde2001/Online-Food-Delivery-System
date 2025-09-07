@@ -1,0 +1,14 @@
+com\ofds\order\model\OrderEntity.class
+com\ofds\order\exception\GlobalExceptionHandler.class
+com\ofds\order\dto\OrderItemDto.class
+com\ofds\order\client\NotificationClient.class
+com\ofds\order\dto\PlaceOrderRequestDto.class
+com\ofds\order\client\PaymentClient.class
+com\ofds\order\configuration\FeignClientConfig.class
+com\ofds\order\dto\MenuItemDto.class
+com\ofds\order\OrderServiceApplication.class
+com\ofds\order\configuration\FeignClientConfig$1.class
+com\ofds\order\web\OrderController.class
+com\ofds\order\client\RestaurantClient.class
+com\ofds\order\dto\OrderResponseDto.class
+com\ofds\order\repo\OrderRepository.class

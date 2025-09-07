@@ -1,0 +1,458 @@
+{
+	"info": {
+		"_postman_id": "7ff9c303-e8f6-4f49-815d-e7e1a1296f51",
+		"name": "Online Food Delivery System",
+		"description": "Postman collection for Online Food Delivery System microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36508680"
+	},
+	"item": [
+		{
+			"name": "Auth Service",
+			"item": [
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"raghu\",\n  \"password\": \"Best123#\",\n  \"email\": \"best@example.com\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9001/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"tester\",\n  \"password\": \"Pass123#\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9092/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Restaurant Service",
+			"item": [
+				{
+					"name": "Get All Restaurants",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfVVNFUiIsInN1YiI6InRlc3RlciIsImlhdCI6MTc1NjM1OTQ1MiwiZXhwIjoxNzU2MzYwMzUyfQ.g_0SV3Bdk-ZwBTNKyVSby6vr3y1BUjiRkE0UxzbvTHo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9092/restaurants",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"restaurants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Restaurant Menu",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfVVNFUiIsInN1YiI6InRlc3RlciIsImlhdCI6MTc1NjE5MDk5OCwiZXhwIjoxNzU2Mjc3Mzk4fQ.pcfQdbx00WiiSSdDGr4yAoWtLgO2ZC7eYll9QlUDaNc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9092/restaurants/1/menu",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"restaurants",
+								"1",
+								"menu"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Restaurant",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfVVNFUiIsInN1YiI6InRlc3RlciIsImlhdCI6MTc1NjM1OTQ1MiwiZXhwIjoxNzU2MzYwMzUyfQ.g_0SV3Bdk-ZwBTNKyVSby6vr3y1BUjiRkE0UxzbvTHo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Hotel Muali\",\r\n  \"address\": \"Mumbai\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9092/restaurants",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"restaurants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Menu",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfVVNFUiIsInN1YiI6InRlc3RlciIsImlhdCI6MTc1NjM1OTQ1MiwiZXhwIjoxNzU2MzYwMzUyfQ.g_0SV3Bdk-ZwBTNKyVSby6vr3y1BUjiRkE0UxzbvTHo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n  { \"name\": \"Methi Paratha\", \"price\": 100.0 },\r\n  { \"name\": \"Manchow Soup\", \"price\": 150 },\r\n  { \"name\": \"Palak Paneer\", \"price\": 250 }\r\n]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9092/restaurants/3/menu",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"restaurants",
+								"3",
+								"menu"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order Service",
+			"item": [
+				{
+					"name": "Place Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfVVNFUiIsInN1YiI6InRlc3RlciIsImlhdCI6MTc1NjM1OTQ1MiwiZXhwIjoxNzU2MzYwMzUyfQ.g_0SV3Bdk-ZwBTNKyVSby6vr3y1BUjiRkE0UxzbvTHo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"restaurantId\": 3,\n  \"items\": [\n    {\n      \"name\": \"Manchow Soup\",\n      \"qty\": 2\n    }\n  ],\n  \"mode\": \"CARD\",\n  \"email\": \"test@example.com\"\n}\n"
+						},
+						"url": {
+							"raw": "http://localhost:9092/orders/placeorder",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"orders",
+								"placeorder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Orders",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfVVNFUiIsInN1YiI6InRlc3RlciIsImlhdCI6MTc1NjE5MDk5OCwiZXhwIjoxNzU2Mjc3Mzk4fQ.pcfQdbx00WiiSSdDGr4yAoWtLgO2ZC7eYll9QlUDaNc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9092/orders/allorders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"orders",
+								"allorders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Order",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfVVNFUiIsInN1YiI6InRlc3RlciIsImlhdCI6MTc1NjE5MDk5OCwiZXhwIjoxNzU2Mjc3Mzk4fQ.pcfQdbx00WiiSSdDGr4yAoWtLgO2ZC7eYll9QlUDaNc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9092/orders/cancel/11",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"orders",
+								"cancel",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Order By ID",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfVVNFUiIsInN1YiI6InRlc3RlciIsImlhdCI6MTc1NjE5MDk5OCwiZXhwIjoxNzU2Mjc3Mzk4fQ.pcfQdbx00WiiSSdDGr4yAoWtLgO2ZC7eYll9QlUDaNc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:9092/orders/22",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"orders",
+								"22"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payment Service",
+			"item": [
+				{
+					"name": "Make Payment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfVVNFUiIsInN1YiI6InRlc3RlciIsImlhdCI6MTc1NjM1OTQ1MiwiZXhwIjoxNzU2MzYwMzUyfQ.g_0SV3Bdk-ZwBTNKyVSby6vr3y1BUjiRkE0UxzbvTHo"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"orderId\": 1,\n  \"amount\": 500.0,\n  \"paymentMethod\": \"CARD\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9092/payments/pay",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"payments",
+								"pay"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Notification Service",
+			"item": [
+				{
+					"name": "Send Email Notification",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6IlJPTEVfVVNFUiIsInN1YiI6InRlc3RlciIsImlhdCI6MTc1NjM1OTQ1MiwiZXhwIjoxNzU2MzYwMzUyfQ.g_0SV3Bdk-ZwBTNKyVSby6vr3y1BUjiRkE0UxzbvTHo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"to\": \"amulshinde07@gmail.com\",\n  \"subject\": \"Order Confirmation\",\n  \"message\": \"Your order has been placed successfully!\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9005/notify/email",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9005",
+							"path": [
+								"notify",
+								"email"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,6 @@
+com\ofds\auth\web\AuthController.class
+com\ofds\auth\AuthServiceApplication.class
+com\ofds\auth\repo\UserRepository.class
+com\ofds\auth\security\JwtService.class
+com\ofds\auth\security\SecurityConfig.class
+com\ofds\auth\model\User.class

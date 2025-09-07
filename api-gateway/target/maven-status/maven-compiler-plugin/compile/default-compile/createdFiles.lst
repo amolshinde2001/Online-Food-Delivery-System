@@ -1,0 +1,5 @@
+com\ofds\gateway\ApiGatewayApplication.class
+com\ofds\gateway\security\JwtService.class
+com\ofds\gateway\security\SecurityConfig.class
+com\ofds\gateway\filter\LoggingServletFilter.class
+com\ofds\gateway\security\JwtAuthenticationFilter.class

@@ -1,0 +1,8 @@
+com\ofds\restaurant\repo\MenuItemRepository.class
+com\ofds\restaurant\exception\GlobalExceptionHandler.class
+com\ofds\restaurant\repo\RestaurantRepository.class
+com\ofds\restaurant\web\RestaurantController.class
+com\ofds\restaurant\dto\ApiResponse.class
+com\ofds\restaurant\model\MenuItem.class
+com\ofds\restaurant\model\Restaurant.class
+com\ofds\restaurant\RestaurantServiceApplication.class
