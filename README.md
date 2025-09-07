@@ -1,1 +1,1 @@
-# Online-Food-Delivery-System
+SpringBoot Microservices-based Online Food Delivery System(JWT Auth, Orders, Payments, Restaurants, Notifications) using MySQL, Eureka and API Gateway ensuringf secure authentication, inter-service communication and scalability.
